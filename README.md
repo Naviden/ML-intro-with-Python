@@ -2,10 +2,6 @@
 
 Welcome to our repository designed to teach Machine Learning (ML) using Python, focusing on regression models. This repository serves as a comprehensive guide for learners at all levels interested in understanding and applying regression techniques in machine learning.
 
-## Current Contents
-
-The repository currently contains a detailed Jupyter notebook titled **"Regression -> Boston Housing"** that covers the following topics and activities:
-
 ### Topics Covered
 - **Understanding Regression in Machine Learning:** Introduction to the concept of regression, its purpose, and types.
 - **Boston Housing Dataset Overview:** Exploration and understanding of the dataset used for regression models.
