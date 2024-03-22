@@ -29,7 +29,7 @@ RMSE is the square root of the mean squared error. Taking the square root brings
 
 R^2, also known as the coefficient of determination, is a statistical measure that represents the proportion of the variance for the dependent variable that's explained by the independent variable(s) in a regression model. It provides an indication of the goodness of fit of a model. An R^2 of 1 indicates that the regression predictions perfectly fit the data. Values of R^2 outside the range 0 to 1 are possible in cases of extrapolation and should be interpreted with caution.
 
-**Formula:** $$R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
+**Formula:** \[ R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2} \]
 
 Where:
 - $\bar{y}$ is the mean of the actual values.
