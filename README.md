@@ -4,7 +4,6 @@ Welcome to our repository designed to teach Machine Learning (ML) using Python, 
 
 ### Topics Covered
 - **Understanding Regression in Machine Learning:** Introduction to the concept of regression, its purpose, and types.
-- **Boston Housing Dataset Overview:** Exploration and understanding of the dataset used for regression models.
 - **Data Preprocessing:** Techniques for loading, understanding, and normalizing data.
 - **Modeling Techniques:** Detailed explanations and implementations of various regression models, including Linear Regression, Ridge Regression, Lasso Regression, ElasticNet, Support Vector Regression (SVR), Decision Tree Regressor, Random Forest Regressor, and Gradient Boosting Regressor.
 - **Evaluation Metrics:** Discussion on Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-Squared (R^2).
