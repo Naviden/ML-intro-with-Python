@@ -29,6 +29,4 @@ Welcome to my repository designed to introduce and teach Machine Learning (ML) u
 - **Unsupervised Learning Models:** We plan to include topics on clustering and dimensionality reduction techniques.
 - **Advanced ML Topics:** Future updates will delve into neural networks, deep learning, and reinforcement learning to cater to advanced learners.
 
-Follow the notebooks sequentially for a comprehensive learning experience, and keep an eye out for our updates as we expand the repository with more content and resources.
-
 Stay tuned for more, and happy learning!
