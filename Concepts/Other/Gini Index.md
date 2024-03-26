@@ -18,7 +18,7 @@ First, we calculate the proportions of each class in the dataset:
 - Proportion of No, $p_{\text{N}} = \frac{4}{10} = 0.4$
 
 Next, we apply the formula for the Gini index:
-$$ \text{Gini}(D) = 1 - (p_{\text{Y}}^2 + p_{\text{N}}^2) $$
+$ \text{Gini}(D) = 1 - (p_{\text{Y}}^2 + p_{\text{N}}^2) $
 $$ \text{Gini}(D) = 1 - (0.6^2 + 0.4^2) $$
 $$ \text{Gini}(D) = 1 - (0.36 + 0.16) $$
 $$ \text{Gini}(D) = 1 - 0.52 $$
