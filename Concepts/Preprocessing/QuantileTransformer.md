@@ -1,4 +1,16 @@
-Imagine we have a dataset with a single feature (e.g., scores from a test) as follows:
+## QuantileTransformer
+
+The `QuantileTransformer` transforms features to follow a uniform or normal distribution by mapping the original values through their empirical cumulative distribution function (CDF). This is useful when algorithms assume normally distributed features, or when you need to reduce the impact of outliers.
+
+### How It Works
+
+1. **Compute empirical quantiles** from the training data
+2. **Map each value** to its corresponding quantile position (a value between 0 and 1)
+3. **Optionally transform** to a normal distribution using the inverse CDF of the standard normal
+
+### Example
+
+Dataset with 5 test scores:
 
 | Student | Score |
 |---------|-------|
@@ -8,47 +20,47 @@ Imagine we have a dataset with a single feature (e.g., scores from a test) as fo
 | D       | 80    |
 | E       | 100   |
 
-## Goal
+With `output_distribution='uniform'`, sklearn computes quantile positions based on the empirical CDF. For 5 equally spaced samples, the transformed values are:
 
-Our objective is to transform the `Score` feature so that it follows a uniform distribution across its range.
+| Student | Score | Transformed (uniform) |
+|---------|-------|-----------------------|
+| A       | 20    | 0.0                   |
+| B       | 40    | 0.25                  |
+| C       | 60    | 0.5                   |
+| D       | 80    | 0.75                  |
+| E       | 100   | 1.0                   |
 
-## Step 1: Rank the Values
+> **Note:** The actual sklearn output uses `(rank - 0.5) / n` interpolation by default, so values may differ slightly. The key idea is that the transformed data is uniformly distributed.
 
-First, we rank the scores from the smallest to the largest. In our simple case, the scores are already sorted:
+### Parameters
 
-- 20, 40, 60, 80, 100
+- `n_quantiles` (default=1000): Number of quantiles to compute. Should not exceed the number of samples.
+- `output_distribution`: `'uniform'` (default) maps to [0, 1]; `'normal'` maps to a standard Gaussian.
+- `subsample` (default=100000): For large datasets, compute quantiles on a subsample for efficiency.
 
-These ranks help determine the quantiles of the data.
+### When to Use
 
-## Step 2: Apply the QuantileTransformer
+- When your data has a skewed distribution and you want to make it more Gaussian-like
+- To reduce the impact of outliers (extreme values get clipped to the quantile range)
+- Before algorithms that assume normal distributions (e.g., LDA, Gaussian Naive Bayes)
 
-The `QuantileTransformer` will transform the scores so that they are evenly spread out across the range. In a uniform distribution, each value is equally likely, and the cumulative distribution function (CDF) is a straight line.
+### vs. StandardScaler
 
-Let's say we want to map these scores to a uniform distribution between 0 and 1. The transformation process involves:
+| Aspect | QuantileTransformer | StandardScaler |
+|--------|---------------------|----------------|
+| Handles outliers | Yes (clips to quantile range) | No (outliers remain extreme) |
+| Output shape | Uniform or Gaussian | Gaussian (only if input is Gaussian) |
+| Non-linear | Yes | No (linear transform) |
+| Information loss | Can distort relative distances | Preserves relative distances |
 
-1. Calculating the quantiles of the original data.
-2. Mapping these quantiles to the corresponding quantiles of the uniform distribution.
+### sklearn Example
 
-## Step 3: Transforming Scores
+```python
+from sklearn.preprocessing import QuantileTransformer
 
-Given our dataset has 5 scores, we can assign quantiles as follows (assuming a uniform distribution for simplicity):
+qt = QuantileTransformer(output_distribution='normal', random_state=42)
+X_train_transformed = qt.fit_transform(X_train)
+X_test_transformed = qt.transform(X_test)  # Always fit on train only!
+```
 
-- **A (20)**: Mapped to the 0.1 quantile of the uniform distribution.
-- **B (40)**: Mapped to the 0.3 quantile.
-- **C (60)**: Mapped to the 0.5 quantile.
-- **D (80)**: Mapped to the 0.7 quantile.
-- **E (100)**: Mapped to the 0.9 quantile.
-
-This mapping ensures that the transformed data follows a uniform distribution.
-
-## Transformed Dataset
-
-After applying the `QuantileTransformer`, the dataset might look like this, assuming a straightforward linear interpolation for illustration:
-
-| Student | Transformed Score |
-|---------|-------------------|
-| A       | 0.1               |
-| B       | 0.3               |
-| C       | 0.5               |
-| D       | 0.7               |
-| E       | 0.9               |
+**Important:** Always `fit` on training data only, then `transform` both train and test. Fitting on the full dataset causes data leakage.

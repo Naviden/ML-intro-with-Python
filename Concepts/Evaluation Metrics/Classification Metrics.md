@@ -1,50 +1,88 @@
-## Accuracy
+## Classification Metrics
 
-Accuracy is one of the most intuitive performance measures. It is the ratio of correctly predicted observations to the total observations and is given by the formula:
+### Confusion Matrix
 
+A confusion matrix is a table that summarizes the performance of a classification model by showing the counts of correct and incorrect predictions broken down by class. For binary classification:
 
-Accuracy = (True Positives + True Negatives) / (Total Observations)
+|                    | Predicted Positive | Predicted Negative |
+|--------------------|--------------------|--------------------|
+| **Actual Positive** | True Positive (TP)  | False Negative (FN) |
+| **Actual Negative** | False Positive (FP) | True Negative (TN)  |
 
-
-High accuracy means that a model correctly predicts both the positives and negatives at a high rate.
-
-## Precision
-
-Precision, also known as Positive Predictive Value, is the ratio of correctly predicted positive observations to the total predicted positives. High precision relates to a low false positive rate, and the formula is:
-
-
-Precision = True Positives / (True Positives + False Positives)
-
-
-Precision is a good measure to determine when the costs of False Positives are high.
-
-## Recall
-
-Recall, also known as Sensitivity or True Positive Rate, is the ratio of correctly predicted positive observations to the all observations in actual class - yes. The formula is:
-
-
-Recall = True Positives / (True Positives + False Negatives)
-
-
-Recall shall be the model metric we use to select our best model when there is a high cost associated with False Negative.
-
-## F1 Score
-
-The F1 Score is the weighted average of Precision and Recall. Therefore, this score takes both false positives and false negatives into account. It is a good way to show that a classifer has a good value for both recall and precision. And the formula for the F1 score is:
-
-
-F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
-
-
-The F1 score is a measure of a test’s accuracy and is used when the distribution of data and the cost of false positives and false negatives are not equally important.
+Understanding the confusion matrix is essential before interpreting any of the metrics below.
 
 ---
 
-*True Positives (TP)* - These are the correctly predicted positive values which mean that the value of actual class is yes and the value of predicted class is also yes.
+## Accuracy
 
-*True Negatives (TN)* - These are the correctly predicted negative values which mean that the value of actual class is no and value of predicted class is also no.
+Accuracy is the ratio of correctly predicted observations to the total observations:
 
-*False Positives (FP)* - When actual class is no and predicted class is yes.
+$$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
 
-*False Negatives (FN)* - When actual class is yes but predicted class in no.
+High accuracy means the model correctly predicts both positives and negatives at a high rate. However, accuracy can be misleading on **imbalanced datasets** — a model that always predicts the majority class can still achieve high accuracy.
 
+## Precision
+
+Precision (Positive Predictive Value) is the ratio of correctly predicted positive observations to all predicted positives:
+
+$$\text{Precision} = \frac{TP}{TP + FP}$$
+
+High precision means few false positives. Use precision when the **cost of false positives is high** (e.g., spam detection — you don't want to mark a legitimate email as spam).
+
+## Recall (Sensitivity)
+
+Recall (also called Sensitivity or True Positive Rate) is the ratio of correctly predicted positive observations to all actual positives:
+
+$$\text{Recall} = \frac{TP}{TP + FN}$$
+
+High recall means few false negatives. Use recall when the **cost of false negatives is high** (e.g., disease detection — you don't want to miss a sick patient).
+
+## Specificity
+
+Specificity (True Negative Rate) is the ratio of correctly predicted negative observations to all actual negatives:
+
+$$\text{Specificity} = \frac{TN}{TN + FP}$$
+
+Specificity is the recall equivalent for the negative class.
+
+## F1 Score
+
+The F1 Score is the harmonic mean of Precision and Recall, providing a single metric that balances both:
+
+$$F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
+
+The F1 score is especially useful when you need a balance between precision and recall and the class distribution is uneven.
+
+## AUC-ROC
+
+The ROC (Receiver Operating Characteristic) curve plots the True Positive Rate (Recall) against the False Positive Rate (1 - Specificity) at various classification thresholds.
+
+The AUC (Area Under the Curve) summarizes the ROC curve as a single number between 0 and 1:
+- **AUC = 1.0**: Perfect classifier
+- **AUC = 0.5**: No better than random guessing
+- **AUC < 0.5**: Worse than random (predictions are inverted)
+
+AUC-ROC is particularly useful for **imbalanced datasets** because it evaluates performance across all thresholds rather than at a single decision point. Most sklearn classifiers provide `predict_proba()` which can be used with `roc_auc_score()`.
+
+---
+
+## Multiclass Averaging
+
+For multiclass problems, precision, recall, and F1 can be computed in different ways:
+- **Macro**: Calculate the metric for each class independently, then average. Treats all classes equally.
+- **Micro**: Aggregate TP, FP, FN across all classes, then compute the metric. Gives more weight to frequent classes.
+- **Weighted**: Like macro, but weighted by the number of samples in each class.
+
+In sklearn: `f1_score(y_true, y_pred, average='macro')` (or `'micro'`, `'weighted'`).
+
+---
+
+### When to Use Each Metric
+
+| Metric    | Best For |
+|-----------|----------|
+| Accuracy  | Balanced datasets where all errors are equally costly |
+| Precision | When false positives are expensive (spam, fraud alerts) |
+| Recall    | When false negatives are expensive (disease screening, safety) |
+| F1 Score  | When you need a balance between precision and recall |
+| AUC-ROC   | Comparing models on imbalanced data, threshold-independent evaluation |
