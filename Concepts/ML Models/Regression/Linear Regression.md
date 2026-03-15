@@ -21,7 +21,8 @@ Linear Regression is a fundamental statistical method used for modeling the rela
 3. **Fitting the Model:**
    - The goal of linear regression is to find the best-fitting line (or hyperplane in higher dimensions) that minimizes the difference between the observed values and the values predicted by the model.
    - This is typically done by minimizing the sum of squared differences between the actual and predicted values, known as the least squares method.
-
+  ![alt text](LR.png)
+ [Image source](https://web.stanford.edu/class/stats202/notes/Linear-regression/Simple-linear-regression.html)
 4. **Interpreting Coefficients:**
    - The coefficients ($b_0, b_1, ..., b_n$) in the linear regression equation represent the relationship between each independent variable and the dependent variable.
    - A positive coefficient indicates a positive relationship, meaning that as the independent variable increases, the dependent variable also increases (and vice versa for negative coefficients).
