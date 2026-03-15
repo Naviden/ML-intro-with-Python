@@ -1,6 +1,7 @@
 # What Is a Model?
 
-![alt text](box.png)
+<img src="box.png" alt="alt text" width="300">
+
 **"All models are wrong, but some are useful"**. George E. P. Box,
 ## Intuition
 
