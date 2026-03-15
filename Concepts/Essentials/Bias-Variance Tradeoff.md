@@ -22,6 +22,11 @@ $$\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error
 - As model complexity increases: bias decreases, variance increases
 - As model complexity decreases: bias increases, variance decreases
 - The goal is to find the sweet spot that minimizes total error
+![alt text](tradeoff.png)
+[Image source](https://www.lightly.ai/blog/bias-in-machine-learning)
+
+![alt text](plot.png)
+[Image source](https://ml-digest.com/bias-variance-tradeoff-in-ml/)
 
 ### Practical Implications
 
