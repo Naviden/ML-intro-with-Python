@@ -1,3 +1,5 @@
+# Logistic regresion
+
 Logistic regression is a type of statistical model used for binary classification tasks. In binary classification, the goal is to predict whether an observation belongs to one of two classes, usually represented as 0 or 1.
 
 #### How It Works:
@@ -20,6 +22,9 @@ Logistic regression is a type of statistical model used for binary classificatio
 4. **Training:**
    - During training, the model adjusts the weights to minimize the difference between predicted probabilities and actual class labels.
    - This is typically done using optimization algorithms such as gradient descent.
+
+![alt text](image-1.png)
+[Screenshot source](https://www.youtube.com/watch?v=yIYKR4sgzI8)
 
 #### Key Points:
 

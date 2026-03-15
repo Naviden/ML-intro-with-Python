@@ -1,3 +1,5 @@
+# Decision Tree
+
 Decision trees are a popular supervised learning algorithm used for both classification and regression tasks. They model decisions as a tree-like structure where each internal node represents a feature (or attribute), each branch represents a decision rule, and each leaf node represents the outcome or class label.
 
 #### How It Works:
@@ -16,6 +18,9 @@ Decision trees are a popular supervised learning algorithm used for both classif
    - To make predictions for a new instance, the algorithm traverses the tree from the root node to a leaf node.
    - At each internal node, it follows the decision rule based on the value of the corresponding feature.
    - Once it reaches a leaf node, the predicted outcome (class label for classification or numerical value for regression) is determined.
+
+![alt text](image.png)
+[Image source](https://www.learnbymarketing.com/methods/classification-and-regression-decision-trees-explained/)
 
 #### Key Points:
 

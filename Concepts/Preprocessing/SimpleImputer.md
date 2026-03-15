@@ -37,3 +37,37 @@ After applying SimpleImputer with the mean strategy, the dataset becomes:
 | 4       | 12        | 18        | 32.5      |
 
 As you can see, the missing values have been replaced with the mean value of each respective feature. This ensures that the dataset is complete and ready for further analysis or modeling.
+
+## Python Example
+
+Below is a simple Python example showing how to use `SimpleImputer` from `scikit-learn` to replace missing values with the mean of each feature.
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.impute import SimpleImputer
+
+# Create the dataset
+data = {
+    "Feature 1": [10, np.nan, 8, 12],
+    "Feature 2": [20, 25, np.nan, 18],
+    "Feature 3": [np.nan, 30, 35, np.nan]
+}
+
+df = pd.DataFrame(data)
+
+print("Original dataset:")
+print(df)
+
+# Create the imputer
+imputer = SimpleImputer(strategy="mean")
+
+# Apply the imputer
+imputed_data = imputer.fit_transform(df)
+
+# Convert back to DataFrame for readability
+df_imputed = pd.DataFrame(imputed_data, columns=df.columns)
+
+print("\nDataset after applying SimpleImputer:")
+print(df_imputed)
+```
