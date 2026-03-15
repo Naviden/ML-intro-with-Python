@@ -2,7 +2,7 @@
 
 <img src="box.png" alt="alt text" width="300">
 
-**"All models are wrong, but some are useful"**. George E. P. Box,
+**"All models are wrong, but some are useful"**. George E. P. Box, (1919-2013)
 ## Intuition
 
 In machine learning, a **model** is a mathematical function that learns
