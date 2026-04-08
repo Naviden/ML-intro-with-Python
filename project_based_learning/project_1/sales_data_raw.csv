@@ -1,0 +1,31 @@
+date,region,salesperson,product,amount,quantity
+03/01/2024,North,Marco Rossi,Software License,€1200.00,3
+2024-01-05,south,Laura Bianchi,Consulting,€850.50,1
+Jan 8 2024,NORTH,Marco Rossi,Hardware,€340.00,2
+03/01/2024,East,Giulia Ferrari,Software License,€1200.00,2
+2024-01-10,west,Paolo Conti,Training,€600.00,1
+,North,Marco Rossi,Consulting,€420.00,1
+12/01/2024,SOUTH,Laura Bianchi,Hardware,€890.75,3
+2024-01-14,east,Giulia Ferrari,Training,€600.00,2
+Jan 15 2024,West,Paolo Conti,Software License,€2400.00,6
+16/01/2024,north,Marco Rossi,Hardware,€170.00,1
+2024-01-18,EAST,Giulia Ferrari,Consulting,€1275.00,3
+19/01/2024,south,Laura Bianchi,Software License,€800.00,2
+Jan 22 2024,WEST,Paolo Conti,Consulting,€425.50,1
+23/01/2024,North,Marco Rossi,Training,€300.00,
+2024-01-25,east,Giulia Ferrari,Hardware,€510.00,3
+Jan 26 2024,SOUTH,Laura Bianchi,Training,€300.00,1
+28/01/2024,west,Paolo Conti,Hardware,€680.25,4
+2024-01-29,NORTH,Marco Rossi,Software License,€1600.00,4
+Jan 30 2024,south,Laura Bianchi,Consulting,€950.00,2
+31/01/2024,East,Giulia Ferrari,Software License,€400.00,1
+2024-02-02,WEST,Paolo Conti,Training,€900.00,3
+03/02/2024,north,Marco Rossi,Consulting,€637.50,
+Feb 5 2024,South,Laura Bianchi,Hardware,€445.00,2
+2024-02-07,east,Giulia Ferrari,Software License,€1200.00,3
+08/02/2024,WEST,Paolo Conti,Consulting,€850.00,2
+Feb 9 2024,NORTH,Marco Rossi,Training,€150.00,1
+2024-02-12,,Laura Bianchi,Hardware,€225.50,1
+13/02/2024,east,Giulia Ferrari,Training,€450.00,3
+Feb 14 2024,west,Paolo Conti,Software License,€800.00,2
+2024-02-15,SOUTH,Laura Bianchi,Consulting,€1062.50,

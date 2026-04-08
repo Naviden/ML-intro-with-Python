@@ -1,0 +1,16 @@
+date,department,category,description,amount,approved_by
+2024-01-05,Sales,Travel,Flight to Milan client meeting,€342.00,M.Rossi
+2024-01-08,Sales,Software,CRM subscription monthly,€89.00,M.Rossi
+2024-01-12,Sales,Meals,Team lunch with prospects,€127.50,M.Rossi
+2024-01-15,Sales,Travel,Train to Rome,€64.00,M.Rossi
+2024-01-19,Sales,Marketing,Printed brochures,€210.00,M.Rossi
+2024-01-22,Sales,Meals,Client dinner,€198.00,M.Rossi
+2024-01-25,Sales,Travel,Taxi receipts January,€43.50,M.Rossi
+2024-01-29,Sales,Software,LinkedIn Sales Navigator,€119.00,M.Rossi
+2024-02-03,Sales,Travel,Flight to Turin,€289.00,M.Rossi
+2024-02-07,Sales,Meals,Prospect lunch,€94.00,M.Rossi
+2024-02-11,Sales,Marketing,Trade show materials,€445.00,M.Rossi
+2024-02-14,Sales,Travel,Hotel 2 nights Turin,€310.00,M.Rossi
+2024-02-18,Sales,Software,DocuSign annual,€199.00,M.Rossi
+2024-02-21,Sales,Meals,Team dinner (5 people),€312.00,M.Rossi
+2024-02-25,Sales,Travel,Train tickets x3,€87.00,M.Rossi

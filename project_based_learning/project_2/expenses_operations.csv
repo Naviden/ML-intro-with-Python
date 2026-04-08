@@ -1,0 +1,16 @@
+date,department,category,description,amount,approved_by
+2024-01-03,Operations,Office Supplies,Printer paper and toner,€87.40,P.Conti
+2024-01-07,Operations,Utilities,Internet and phone January,€129.00,P.Conti
+2024-01-10,Operations,Software,Microsoft 365 licences x5,€44.00,P.Conti
+2024-01-14,Operations,Maintenance,Office cleaning service,€220.00,P.Conti
+2024-01-17,Operations,Office Supplies,Stationery order,€63.20,P.Conti
+2024-01-21,Operations,Utilities,Electricity bill,€310.00,P.Conti
+2024-01-28,Operations,Maintenance,Printer repair,€185.00,P.Conti
+2024-01-31,Operations,Software,Accounting software,€149.00,P.Conti
+2024-02-04,Operations,Office Supplies,Desk accessories,€94.80,P.Conti
+2024-02-06,Operations,Utilities,Internet and phone February,€129.00,P.Conti
+2024-02-09,Operations,Maintenance,HVAC service,€380.00,P.Conti
+2024-02-13,Operations,Software,Cloud storage upgrade,€29.00,P.Conti
+2024-02-17,Operations,Office Supplies,Ergonomic equipment,€€567.00,P.Conti
+2024-02-20,Operations,Utilities,Electricity bill,€298.00,P.Conti
+2024-02-24,Operations,Maintenance,Security system check,€145.00,P.Conti
