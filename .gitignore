@@ -118,3 +118,4 @@ dmypy.json
 .jupyter
 # Notebook config
 .jupyter/jupyter_notebook_config.py
+project_based_learning/instructor_walkthrough.docx
